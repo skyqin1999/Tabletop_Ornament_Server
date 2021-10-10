@@ -5,6 +5,9 @@ $password = "Test123.";
 $versionname = $_POST["versionname"];
 $iotid = $_POST["iotid"];
 $devname = $_POST["devname"];
+echo $devname;
+echo $iotid;
+echo $versionname;
 // 创建连接
 $conn = new mysqli($servername, $username, $password);
  
