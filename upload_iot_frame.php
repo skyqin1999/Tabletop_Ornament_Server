@@ -32,8 +32,8 @@ if (($_FILES["file"]["size"] < 204800000)   // 小于 200 kb
         else
         {
             // 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
-            move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
-            echo "文件存储在: " . "upload/" . $_FILES["file"]["name"];
+            move_uploaded_file($_FILES["file"]["tmp_name"], "../upload/" . $versionname.".".$extension);
+            echo "文件存储在: " . "../upload/" . $versionname.".".$extension;
         }
     }
 }
@@ -50,9 +50,7 @@ if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
 } 
 echo "连接成功" . "<br>";
-$versionname = $_FILES["file"]["name"];
-echo $versionname;
-$sql = "INSERT INTO `iot`.`table_version` (`versionname`) VALUES ('$versionname');";
+$sql = "INSERT INTO `iot`.`table_version` (`versionname`) VALUES ('$versionname.".".$extension');";
 
 if ($conn->query($sql) === TRUE) {
     echo "新记录插入成功\n";
