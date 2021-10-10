@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <title>照片的故事</title>
+  <!-- Meta-Tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="keywords" content=""/>
+
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!-- //Meta-Tags -->
+  <!-- Stylesheets -->
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <!--// Stylesheets -->
+  <!--fonts-->
+  <!-- title -->
+
+  <!-- body -->
+  <!--//fonts-->
+</head>
+
+<body>
+  <header>
+    <h1>Push2Device</h1>
+  </header>
+  <div class="w3ls-contact">
+
+    <!-- form starts here -->
+    <form action="push.php" method="post">
+      <div class="agile-field-txt">
+        <label>
+          设备名称：</label>
+        <input type="text" name="name" placeholder="kelevc（arduino代码中的key）" required="" />
+      </div>
+      <div class="agile-field-txt">
+        <label>
+          推送版本</label>
+        <input type="text" name="version" placeholder="1" required=""  />
+      </div>
+
+      <div class="w3ls-contact  w3l-sub">
+        <input type="submit" value="发送到设备">
+      </div>
+      <div class="copy-wthree">
+      <p>欢迎使用本站de固件推送服务</p>
+      </div>
+    </form>
+  </div>
+  <!-- //form ends here -->
+  <div class="copy-wthree">
+    <p>Copyright &copy; 2021.Kelevc All rights reserved. </p>
+  </div>
+</body>
+<!-- //Body -->
+
+</html>
