@@ -1,7 +1,7 @@
 <?php
-include "connect.php";
-function getItemFromDev() {
 
+function getItemFromDev() {
+    include "connect.php";
     $output = "";
 
     // Create connection
@@ -27,9 +27,8 @@ function getItemFromDev() {
 }
 
 function getItemFromIot() {
-
+    include "connect.php";
     $output = "";
-
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection
@@ -53,10 +52,7 @@ function getItemFromIot() {
 }
 
 function getItemFromVersion() {
-    $servername = "8.131.65.42";
-    $username = "root";
-    $password = "Test123.";
-
+    include "connect.php";
     $output = "";
 
     // Create connection

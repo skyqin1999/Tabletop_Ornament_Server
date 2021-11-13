@@ -15,13 +15,27 @@ if ($conn->connect_error) {
 } 
 echo "连接成功\n";
 
-$sql = "INSERT INTO `iot`.`table_iot_dev` (`iotid`, `devname`, `versionname`) VALUES ($iotid, '$devname', '$versionname')";
+$sql = "SELECT versionname FROM `iot`.`table_iot_dev` WHERE `iotid`=$iotid";
+$result = $conn->query($sql);
 
-if ($conn->query($sql) === TRUE) {
-    echo "新记录插入成功\n";
+if ($result->num_rows > 0) {
+    $sql = "UPDATE `iot`.`table_iot_dev` SET `versionname` = '$versionname' , `devname` = '$devname' WHERE `iotid` = $iotid";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "新记录更新成功\n";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error."\n";
+    }
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error."\n";
+    $sql = "INSERT INTO `iot`.`table_iot_dev` (`iotid`, `devname`, `versionname`) VALUES ('$iotid', '$devname', '$versionname')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "新记录插入成功\n";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error."\n";
+    }
 }
+
 
 $conn->close();
 

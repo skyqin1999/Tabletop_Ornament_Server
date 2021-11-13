@@ -1,6 +1,12 @@
 <?php
 include "connect.php";
- 
+$reg = $_POST["reg"];
+if ($reg != 1){
+    $push = array('id' => -1);
+    $push_content = json_encode($push);
+    echo $push_content;
+    return -1;
+}
 // 创建连接
 $conn = new mysqli($servername, $username, $password);
  

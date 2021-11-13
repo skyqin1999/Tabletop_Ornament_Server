@@ -23,15 +23,15 @@ if (($_FILES["file"]["size"] < 204800000)   // 小于 200 kb
         
         // 判断当前目录下的 upload 目录是否存在该文件
         // 如果没有 upload 目录，你需要创建它，upload 目录权限为 777
-        if (file_exists("../upload/" . $_FILES["file"]["name"]))
+        if (file_exists("upload/" . $_FILES["file"]["name"]))
         {
             echo $_FILES["file"]["name"] . " 文件已经存在。 ";
         }
         else
         {
             // 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
-            move_uploaded_file($_FILES["file"]["tmp_name"], "../upload/" . $versionname.".".$extension);
-            echo "文件存储在: " . "../upload/" . $versionname.".".$extension;
+            move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $versionname.".".$extension);
+            echo "文件存储在: " . "upload/" . $versionname.".".$extension;
         }
     }
 }
@@ -48,7 +48,7 @@ if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
 } 
 echo "连接成功" . "<br>";
-$sql = "INSERT INTO `iot`.`table_version` (`versionname`) VALUES ('$versionname.".".$extension');";
+$sql = "INSERT INTO `iot`.`table_version` (`versionname`) VALUES ('$versionname".".$extension');";
 
 if ($conn->query($sql) === TRUE) {
     echo "新记录插入成功\n";

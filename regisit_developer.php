@@ -11,6 +11,11 @@ if ($conn->connect_error) {
 } 
 echo "连接成功" . "<br>";
 
+if (strlen($devname) == 0){
+    echo "Error:开发者名称不能为空";
+    return 0;
+}
+
 $sql = "INSERT INTO `iot`.`table_developer` (`devname`) VALUES ('$devname');";
 
 if ($conn->query($sql) === TRUE) {
