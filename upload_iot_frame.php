@@ -1,7 +1,5 @@
 <?php
-$servername = "8.131.65.42";
-$username = "root";
-$password = "Test123.";
+include "connect.php";
 $versionname = $_POST["versionname"];
 
 // 允许上传的图片后缀

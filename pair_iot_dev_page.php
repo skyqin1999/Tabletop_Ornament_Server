@@ -6,6 +6,7 @@
 <body>
 <?php 
 include "select.php";
+include "connect.php";
 // echo "I have a color car"; // I have a red BMW
 ?>
 <form action="pair_iot_dev.php" method="post" enctype="multipart/form-data">

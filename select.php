@@ -1,8 +1,6 @@
 <?php
+include "connect.php";
 function getItemFromDev() {
-    $servername = "8.131.65.42";
-    $username = "root";
-    $password = "Test123.";
 
     $output = "";
 
@@ -29,9 +27,6 @@ function getItemFromDev() {
 }
 
 function getItemFromIot() {
-    $servername = "8.131.65.42";
-    $username = "root";
-    $password = "Test123.";
 
     $output = "";
 

@@ -1,7 +1,5 @@
 <?php
-$servername = "8.131.65.42";
-$username = "root";
-$password = "Test123.";
+include "connect.php";
  
 // 创建连接
 $conn = new mysqli($servername, $username, $password);

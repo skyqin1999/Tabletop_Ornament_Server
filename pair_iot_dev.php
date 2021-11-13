@@ -1,7 +1,5 @@
 <?php
-$servername = "8.131.65.42";
-$username = "root";
-$password = "Test123.";
+include "connect.php";
 $versionname = $_POST["versionname"];
 $iotid = $_POST["iotid"];
 $devname = $_POST["devname"];
